@@ -1,17 +1,20 @@
 {
-  "name": "mean_stack_node_202_term2_project-master",
+  "name": "chatz",
   "version": "1.0.0",
-  "description": "Chat room application with NodeJS and Socket.io.",
-  "main": "index.js",
+  "description": "Realtime chat app with rooms",
+  "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "start": "node server",
+    "dev": "nodemon server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jeandre De Villiers",
+  "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.2"
   }
 }
