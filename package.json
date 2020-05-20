@@ -1,0 +1,17 @@
+{
+  "name": "mean_stack_node_202_term2_project-master",
+  "version": "1.0.0",
+  "description": "Chat room application with NodeJS and Socket.io.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
