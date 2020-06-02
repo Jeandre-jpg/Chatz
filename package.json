@@ -1,26 +1,19 @@
 {
-  "name": "simplechatapp",
+  "name": "mean_stack_node_202_term2_project",
   "version": "1.0.0",
-  "description": "Simple chat app built with node.js and socket.io",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngrt/simpleChatApp.git"
+    "url": "git+https://github.com/Jeandre-jpg/MEAN_STACK_NODE_202_TERM2_PROJECT.git"
   },
-  "author": "Noufel Gouirhate",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ngrt/simpleChatApp/issues"
+    "url": "https://github.com/Jeandre-jpg/MEAN_STACK_NODE_202_TERM2_PROJECT/issues"
   },
-  "homepage": "https://github.com/ngrt/simpleChatApp#readme",
-  "dependencies": {
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "nodemon": "^1.14.3",
-    "socket.io": "^2.0.4"
-  }
+  "homepage": "https://github.com/Jeandre-jpg/MEAN_STACK_NODE_202_TERM2_PROJECT#readme"
 }
