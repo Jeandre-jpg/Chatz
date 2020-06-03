@@ -1,23 +1,26 @@
 {
-  "name": "202_nodejs_code",
+  "name": "chat-room",
   "version": "1.0.0",
-  "description": "This file contains only the current week notes for easy access. The previous weeks' notes are commented out so that this file always has all of the notes at the end of the class.",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "npm run start:client & npm run start:server",
+    "start:client": "parcel src/index.html",
+    "start:server": "nodemon src/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RuanOW/202_nodejs_code.git"
-  },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RuanOW/202_nodejs_code/issues"
-  },
-  "homepage": "https://github.com/RuanOW/202_nodejs_code#readme",
+  "license": "MIT",
   "dependencies": {
-    "es6-template-strings": "^2.0.1"
+    "moment": "^2.24.0",
+    "nodemon": "^2.0.2",
+    "parcel": "^1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }
