@@ -1,0 +1,53 @@
+body {
+    padding: 10vw;
+    margin: 0;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(254,188,245);
+    background: linear-gradient(90deg, rgba(254,188,245,1) 0%, rgba(164,149,255,1) 50%, rgba(70,69,252,1) 100%);
+    max-width:100%; 
+    height:auto
+  }
+
+
+
+    #message-container {
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    #send-container {
+      position: fixed;
+      margin-bottom: 7vw;
+      bottom: 0;
+      background-color: #ffece9;
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+      height: 3vw;
+      border-radius: 2vw;
+    }
+
+    #message-input {
+      flex-grow: 1;
+      background-color: #ffece9;
+      border: white;
+      border-radius: 1vw;
+    }
+
+
+    button:hover {   
+        opacity: 0.7;   
+    }   
+
+
+    button {   
+        background-color: #ffd6d0;  
+        font-family: 'Montserrat', sans-serif; 
+          height: 3vw;
+         color: black;   
+         width: 6vw;
+         border: none;   
+         cursor: pointer;  
+         border-radius: 01vw; 
+          }  
