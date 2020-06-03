@@ -1,14 +1,23 @@
 {
-  "name": "hichat",
-  "description": "a realtime chat web application",
-  "version": "0.4.0",
+  "name": "202_nodejs_code",
+  "version": "1.0.0",
+  "description": "This file contains only the current week notes for easy access. The previous weeks' notes are commented out so that this file always has all of the notes at the end of the class.",
   "main": "server.js",
-  "dependencies": {
-      "express": "3.4.x",
-      "socket.io": "0.9.x"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "engines": {
-      "node": "0.10.x",
-      "npm": "1.2.x"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuanOW/202_nodejs_code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuanOW/202_nodejs_code/issues"
+  },
+  "homepage": "https://github.com/RuanOW/202_nodejs_code#readme",
+  "dependencies": {
+    "es6-template-strings": "^2.0.1"
   }
 }

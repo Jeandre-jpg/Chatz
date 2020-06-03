@@ -5,7 +5,26 @@ var template = require('es6-template-strings'); //Require our newly installed mo
 
 var contacts = []; // We can use this contacts variable to store all of the contacts that connected to the chat
 
-var server = http.createServer(); // Abstract away the server method for refactoring purposes
+var server = http.createServer(simpleRouter); // Abstract away the server method for refactoring purposes
+var io = require('socket.io')(server); 
+
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  io.emit("clientConnected", "you have successfully connected to the chat server")
+
+  socket.on('chatroom', function(msg){
+    console.log(`This was the message that was sent ${msg}`)
+    var emoji = "&#128540";
+    var res = msg.replace(":)", emoji)
+    io.emit('chatroom', res);
+  });
+
+  socket.on('broadcast', function(msg){
+    console.log(`This was the message that was sent ${msg}`)
+    socket.broadcast.emit('broadcast', 'Thank you for your message');
+  })
+});
 
 var simpleRouter = function(request) {
   var method = request.method;
@@ -20,6 +39,7 @@ var simpleRouter = function(request) {
   var suppliedRoute = {method: method, path: path}
   var routes = [
     {method: 'GET', path: '/', handler: handleFormGet},
+    {method: 'GET', path: '/socket.io.js', handler: handleSocketGet},
     {method: 'POST', path: '/', handler: handleFormPost}
   ];
 
@@ -38,6 +58,15 @@ var simpleRouter = function(request) {
 var handleFormGet = function(request, response) {
   response.writeHead(200, {"Content-Type": "text/html"});
   fs.readFile('templates/form.html', 'utf8', function(err, data) {
+    if (err) { throw err; }
+    response.write(data);
+    response.end();
+  });
+}
+
+var handleSocketGet = function(request, response) {
+  response.writeHead(200, {"Content-Type": "text/html"});
+  fs.readFile('js/socket.js', 'utf8', function(err, data) {
     if (err) { throw err; }
     response.write(data);
     response.end();
