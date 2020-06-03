@@ -3,57 +3,49 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    font-family: 'Tenali Ramakrishna', sans-serif;
-    background-color: pink; 
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(254,188,245);
+    background: linear-gradient(90deg, rgba(254,188,245,1) 0%, rgba(164,149,255,1) 50%, rgba(70,69,252,1) 100%);
+    max-width:100%; 
+    height:auto
   }
 
-  #message-container {
-    width: 80%;
-    max-width: 1200px;
+
+  h1{
+    color: white;
+    text-align: center;
+    padding: 2vw;
+    justify-content: center;
   }
 
-  #message-container div {
-    background-color: #CCC;
-    padding: 5px;
+  h2{
+      color: white;
+      text-align: center;
+      justify-content: center;
   }
 
-  #message-container div:nth-child(2n) {
-    background-color: #FFF;
-  }
-
-  #send-container {
-    position: fixed;
-    padding-bottom: 30px;
-    bottom: 0;
-    background-color: white;
-    max-width: 1200px;
-    width: 80%;
-    display: flex;
-  }
-
-  #message-input {
-    flex-grow: 1;
-  }
-
-button {   
-       background-color: #4CAF50;   
+#button {   
+       background-color: black;   
        width: 100%;  
-        color: orange;   
+        color: yellow;   
         padding: 15px;   
         margin: 10px 0px;   
         border: none;   
-        cursor: pointer;   
+        cursor: pointer;  
+        border-radius: 0.5vw; 
          }   
  form {   
         margin-top: 10vw;
         border: 3px solid #f1f1f1;   
+        margin-left: -20vw;
     }   
  input[type=text], input[type=password] {   
         width: 100%;   
         margin: 8px 0;  
         padding: 12px 20px;   
         display: inline-block;   
-        border: 2px solid green;   
+        border: 2px solid purple;   
         box-sizing: border-box;   
     }  
  button:hover {   
@@ -68,5 +60,8 @@ button {
      
  .container {   
         padding: 25px;   
-        background-color: lightblue;  
+        background-color: #a75dc0; 
+        position: absolute;
+       margin-left: -12vw;
+       border-radius: 1vw;
     }   
