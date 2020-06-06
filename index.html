@@ -7,20 +7,23 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="index.js"></script>
 </head> 
-<body>    
+<body class="template">    
   
     
-    <form>  
+  
         <div class="container">   
             <h1>Welcome to Chatz</h1>
             <h2>Please Login</h2>
-            <label style="color: white;">Username : </label>   
+            <form method="POST">  
+            <label for='username'>Username : </label>   
             <input type="text" placeholder="Enter Username" name="username" required>  
-            <label style="color: white;">Password : </label>   
+            <label for="password">Password : </label>   
             <input type="password" placeholder="Enter Password" name="password" required>  
             <a href="chat.html">Login</a>
+        </form>  
         </div>   
-    </form>   
+  
 </body>
 </html>
