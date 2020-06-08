@@ -5,53 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chatz App</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
   <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
   <script src="index.js"></script>
 </head> 
 <body class="template">    
         <div class="container">   
+          <img src="./images/build.png" style="width: 5vw; height: 5vw; margin-left: 13vw;">
             <h1>Welcome to Chatz</h1>
             <h2>Please Login</h2>
             <form method="POST">  
             <label for='username'>Username : </label>   
+            <br />
             <input type="text" placeholder="Enter Username" name="username" required>  
-            <label for="password">Password : </label>   
+            <br />
+            <label for="password">Password : </label>  
+            <br /> 
             <input type="password" placeholder="Enter Password" name="password" required>  
-            <a href="chat.html">Login</a>
+            <button><a href="chat.html">LOGIN</a></button>
         </form> 
 
         <br />
         <br />
 
-        <div id="textArea" style="border: 1px solid #333; width: 600px; height: 580px; padding: 10px;"></div>
-        <div
-        <form>  
-          <label for='username'>Message : </label>   
-          <input id="message" type="text"  name="message">    
-          <button type="submit">Send</button>
-      </form> 
+     
 
 
         </div>   
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-        <script>
-  const socket = io('http://localhost:8888', {transports: ['websocket']});
-  socket.on('ClientConnected', function(msg) {
-    console.log(msg);
-  var messageBox = document.getElementById('textArea').innerHTML - msg
-  })
 
-  socket.on('chatroom',(msg) => {
-    var messageBox = document.getElementById('textArea').innerHTML - msg
-  })
-
-  function sendMsg() {
-    e.preventDefault()
-    var message = document.getElementById('message').value
-    socket.emit('chatroom', message)
-  }
-</script>
-  
 </body>
 </html>
