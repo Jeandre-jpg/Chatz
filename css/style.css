@@ -1,0 +1,55 @@
+
+body {
+	padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    font-family: 'Oswald', sans-serif;
+    background-image: url("../images/round-faded-lights-during-nighttime-158658.jpg");
+    height:auto;
+    background-repeat:no-repeat;
+    background-size: cover;
+    color: #037482;
+}
+
+h1{
+    color: #037482;
+    text-align: center;
+    justify-content: center;
+  }
+
+  h2{
+    color: #037482;
+      text-align: center;
+      justify-content: center;
+  }
+
+form {
+	margin: 15px 0;
+}
+
+form {   
+	margin-top: 5vw; 
+	width: 30vw;
+	text-align: center;
+}   
+input[type=text], input[type=password] {   
+	width: 60%;   
+	margin: 8px 0;  
+	padding: 12px 20px;   
+	display: inline-block;   
+	border: 5px solid #15e6ef;   
+	box-sizing: border-box;  
+	color: #15e6ef; 
+	text-align: center;
+
+}  
+#history {
+	background: #FFF;
+	border: 10px solid #15e6ef;
+	height: 550px;
+	width: 750px;
+	margin-top: 5vw;
+	margin-left: 45vw;
+}

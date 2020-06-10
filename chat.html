@@ -1,13 +1,51 @@
 <!DOCTYPE html>
+<html>
+
+<head>
+    <title>ChatJS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <div id="history"></div>
+    <form id="chat">
+        <input type="text" id="msg_text" name="msg_text" style="margin-left: -55vw; width: 300px;" />
+        <input type="submit" value="Send" style="margin-top: 40vw; width: 100px; height: 50px; background-color: #15e6ef; 	border-radius: 1vw; " />
+    </form>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        var socket = io.connect();
+
+        $("form#chat").submit(function(e) {
+            e.preventDefault();
+            socket.emit("send message", $(this).find("#msg_text").val(), function() {
+                $("form#chat #msg_text").val("");
+            });
+        });
+		
+		socket.on("update messages", function(msg){
+		var final_message = $("<p />").text(msg);
+		   $("#history").append(final_message);
+		});
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
-  <title>Chatz App</title>
-  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <title>Chatz App</title> -->
+  <!-- <script defer src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script defer src="script.js"></script>
+  <script src="./index.js"></script>
+  <script src="server.js"></script>
   <link rel="stylesheet" href="chat.css">
 </head>
 <body>
@@ -27,7 +65,8 @@
  
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-        <script>
+        <script src="http://localhost:8888/"></script> -->
+        <!-- <script>
   const socket = io('http://localhost:8888', {transports: ['websocket']});
   socket.on('ClientConnected', function(msg) {
     console.log(msg);
@@ -52,6 +91,6 @@
     }
     socket.emit('chatroom', msgObj)
   }
-</script>
-</body>
-</html>
+</script> -->
+<!-- </body>
+</html> -->
