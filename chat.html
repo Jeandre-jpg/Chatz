@@ -11,30 +11,47 @@
   <link rel="stylesheet" href="chat.css">
 </head>
 <body>
-   <div id="textArea" style="border: 15px solid #15e6ef; width: 1023px; height: 340px; padding: 10px; background-color: white;"></div>
-        <div></div>
+
+
+
+   <div id="textArea" style="border: 15px solid #15e6ef; width: 1023px; height: 340px; padding: 10px; background-color: white;">
+        <ul id="messageList" style="list-style: none;">
+        </ul>
+  </div>
        <form style="width: 1020px; height: 10%; background-color: #15e6ef; padding: 2vw; justify-content: center;">  
           <label for='username'>Message : </label>   
           <input id="message" type="text"  name="message" style="width: 400px;">    
-          <button type="submit">Send</button>
+          <button onclick="sendMsg()">Send</button>
       </form> 
-</body>
+
+ 
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
         <script>
   const socket = io('http://localhost:8888', {transports: ['websocket']});
   socket.on('ClientConnected', function(msg) {
     console.log(msg);
-  var messageBox = document.getElementById('textArea').innerHTML - msg
+    var messageElement = document.createElement('li')
+    messageElement.textContent = msg
+    var messageBox = document.getElementById('messageList').appendChild(messageElement)
   })
 
   socket.on('chatroom',(msg) => {
-    var messageBox = document.getElementById('textArea').innerHTML - msg
+    var messageElement = document.createElement('li')
+    messageElement.textContent = msg.id + " " + msg.name + " " + msg.message
+    var messageBox = document.getElementById('messageList').appendChild(messageElement)
   })
 
-  function sendMsg() {
-    e.preventDefault()
+  function sendMsg(e) {
     var message = document.getElementById('message').value
-    socket.emit('chatroom', message)
+    var id = socket.id
+    var msgObj = {
+      id : id,
+      name : "Jeandré",
+      message: message
+    }
+    socket.emit('chatroom', msgObj)
   }
 </script>
-  
+</body>
 </html>

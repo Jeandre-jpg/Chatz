@@ -15,6 +15,8 @@ io.on('connection', (socket) => {
 
     socket.on('chatroom', (message) => {
         console.log(`This was a message from chatroom: ${message}`)
+        // var emoji = '&#128540';
+        // var res = message.replace(':', emoji)
         io.emit('chatroom', message)
     })
 })
