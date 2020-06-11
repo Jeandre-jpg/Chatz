@@ -6,9 +6,7 @@
   <title>Chatz App</title>
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
-  <script defer src="script.js"></script>
-  <script src="./index.js"></script>
-  <script src="server.js"></script>
+  <script defer src="app.js"></script>
 </head> 
 <body class="template">    
         <div class="container">   
@@ -23,7 +21,8 @@
             <label for="password">Password : </label>  
             <br /> 
             <input type="password" placeholder="Enter Password" name="password" required>  
-           <a href="chat.html">LOGIN</a>
+            <br />
+            <button formaction="./chat.html">LOGIN</button>
         </form> 
 
         <br />
@@ -34,6 +33,21 @@
 
         </div>   
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script>
+          function formaction()
+{
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
+    if (addUser(userName, firstName, lastName, job, mail, pass))
+    {
+        alert("added");
+    }
+    else
+    {
+        alert("failed");
+    }
+}
+        </script>
 </body>
 </html>
